@@ -63,7 +63,17 @@ class LCD:
 
         self.send(packet)
 
-   #def brightness()
+    def brightness(self,val=0):
+        if val == 0:
+            self.send('\x04\xff')
+        if val == 1:
+            self.send('\x04\x20')
+        if val == 2:
+            self.send('\x04\x40')
+        if val == 3:
+            self.send('\x04\x60')
+
+
 
 
     def digit_select(self,digit = 0):
